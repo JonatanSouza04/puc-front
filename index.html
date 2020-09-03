@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="">
   <head>
-    <link rel="manifest" href="site.webmanifest">
+   
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
   
@@ -22,7 +22,18 @@
  Seu conteúdo ou feature principal vem aqui
  </section>
  <aside>
- Algum conteúdo ou feature não-principal de apoio
+     Algum conteúdo ou feature não-principal de apoio
+
+     <br />
+     <br />
+     
+
+     <div id="location-display" style="height: 700px;display: none">
+      <label>Minha localização</label> <br /> 
+      <iframe id="location"  src="https://maps.google.com/maps?q=belohorizonte&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"style="border:0" allowfullscreen></iframe>
+      <br />
+      <label id="detail-location"></label>
+   </div>
  </aside>
  </main>
  <footer>
@@ -41,6 +52,9 @@ nome do autor.
    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
  </script>
  <script src="https://www.google-analytics.com/analytics.js" async></script>
+
+
+
 
 </body>
 </html>
