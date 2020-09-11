@@ -11,14 +11,20 @@ helloWorld();
 var componentMaps = document.getElementById("location");
 
 function getLocation() {
-   if (navigator.geolocation) 
-   navigator.geolocation.getCurrentPosition(viewLocation) 
+    if (navigator.geolocation) 
+    navigator.geolocation.getCurrentPosition(viewLocation) 
 }
 
 function viewLocation(position) {
+
   if(position.coords.latitude !== undefined)
   {
-   componentMaps.src = 'https://maps.google.com/maps?q=' + position.coords.latitude + ',' + position.coords.longitude + '&t=&z=13&ie=UTF8&iwloc=&output=embed';
+   componentMaps.src = 'https://maps.google.com/maps?q=' + 
+                       position.coords.latitude + ',' + 
+                       position.coords.longitude + 
+                       '&t=&z=20&ie=UTF8&iwloc=&output=embed';
+
+                       
    var componentDisplay = document.getElementById("location-display");
    componentDisplay.style.display = 'block';
 
@@ -26,6 +32,4 @@ function viewLocation(position) {
   }
 }
 
-//Faz chamada da localização
-getLocation();
    

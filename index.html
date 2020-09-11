@@ -14,31 +14,27 @@
 <body>
  
  <header>
- <h1>Título da sua página ou webapp</h1>
- <nav>Menu de navegação principal</nav>
+   <div class="header">  
+     <h1>Aula Front-Avançado</h1>
+    </div>
  </header>
  <main>
- <section>
- Seu conteúdo ou feature principal vem aqui
+ 
+ <section class="title">
+     <button class="btn btn-blue" onclick="javascript:getLocation();">Acessar Localização</button>
  </section>
- <aside>
-     Algum conteúdo ou feature não-principal de apoio
 
-     <br />
-     <br />
+   
+   <aside class="box-map">
+       <iframe class="box-map" id="location"  src="https://maps.google.com/maps?q=belohorizonte&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="1" />
+      </iframe>
      
-
-     <div id="location-display" style="height: 700px;display: none">
-      <label>Minha localização</label> <br /> 
-      <iframe id="location"  src="https://maps.google.com/maps?q=belohorizonte&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"style="border:0" allowfullscreen></iframe>
-      <br />
       <label id="detail-location"></label>
-   </div>
- </aside>
+   </aside>
+
  </main>
  <footer>
- Informações gerais, recursos secundários de apoio,
-nome do autor.
+    Desenvolvido por Jonatan Souza
  </footer>
 
 
