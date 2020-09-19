@@ -28,7 +28,7 @@ function viewLocation(position) {
                                 latitude + ',' + 
                                 longitude + 
                                 '&t=&z=20&ie=UTF8&iwloc=&output=embed';
-          document.getElementById('detail-location').innerHTML = 'Latitude: ' + latitude + '  -  Longitude: ' + longitude;
+          document.getElementById('detail-location').innerHTML = `Latitude: ${latitude} Longitude: ${longitude}`;
       }
     }
 }
