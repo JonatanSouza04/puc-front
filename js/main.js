@@ -17,19 +17,20 @@ function getLocation() {
 
 function viewLocation(position) {
 
-  if(position.coords.latitude !== undefined)
-  {
-   componentMaps.src = 'https://maps.google.com/maps?q=' + 
-                       position.coords.latitude + ',' + 
-                       position.coords.longitude + 
-                       '&t=&z=20&ie=UTF8&iwloc=&output=embed';
+          
+     if(position !== undefined)
+     {
+          const { latitude, longitude } = position.coords;
 
-                       
-   var componentDisplay = document.getElementById("location-display");
-   componentDisplay.style.display = 'block';
-
-   document.getElementById('detail-location').innerHTML = 'Latitude: ' + position.coords.latitude + '  -  Longitude: ' + position.coords.longitude; 
-  }
+          if(latitude !== undefined)
+          {
+          componentMaps.src =  'https://maps.google.com/maps?q=' + 
+                                latitude + ',' + 
+                                longitude + 
+                                '&t=&z=20&ie=UTF8&iwloc=&output=embed';
+          document.getElementById('detail-location').innerHTML = 'Latitude: ' + latitude + '  -  Longitude: ' + longitude;
+      }
+    }
 }
 
    
