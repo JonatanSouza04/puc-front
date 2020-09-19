@@ -10,27 +10,53 @@ helloWorld();
 
 var componentMaps = document.getElementById("location");
 
-function getLocation() {
-    if (navigator.geolocation) 
-    navigator.geolocation.getCurrentPosition(viewLocation) 
-}
-
-function viewLocation(position) {
-
-          
-     if(position !== undefined)
-     {
-          const { latitude, longitude } = position.coords;
-
-          if(latitude !== undefined)
-          {
-          componentMaps.src =  'https://maps.google.com/maps?q=' + 
-                                latitude + ',' + 
-                                longitude + 
-                                '&t=&z=20&ie=UTF8&iwloc=&output=embed';
-          document.getElementById('detail-location').innerHTML = `Latitude: ${latitude} Longitude: ${longitude}`;
-      }
+class viewLocation {
+      
+    constructor() {
+      this.position  = undefined;
+      this.latitude  = 0.0;
+      this.longitude = 0.0;
     }
+
+  getPosition = async() => {
+     
+    let app = this;
+
+    navigator.geolocation.getCurrentPosition(position => {
+      
+            app.position = position;
+        
+            if(app.position !== undefined)
+            {
+                const { latitude, longitude, ...rest } =  app.position.coords;
+
+                app.latitude  = latitude;
+                app.longitude = longitude;
+
+                if(latitude !== undefined)
+                {
+                componentMaps.src =  'https://maps.google.com/maps?q=' + 
+                                      latitude + ',' + 
+                                      longitude + 
+                                      '&t=&z=20&ie=UTF8&iwloc=&output=embed';
+                document.getElementById('detail-location').innerHTML = `Latitude: ${latitude} Longitude: ${longitude}`;
+            }
+          }
+    });
+
+ }
+
 }
+
+const viewModel = new viewLocation();
+
+
+
+function getLocation(){
+   viewModel.getPosition();
+}
+
+
+
 
    
