@@ -6,8 +6,8 @@ const UglifyJSPlugin    = require('uglifyjs-webpack-plugin');
 
 module.exports = {
      entry: [
-            path.join(__dirname, 'src/index.jsx'),
-            path.join(__dirname, 'src/sass/main.scss'),
+             path.join(__dirname, 'src/index.jsx'),
+             path.join(__dirname, 'src/sass/main.scss'),
           ],
      output:{
           path: path.join(__dirname,'dist'),
@@ -23,8 +23,7 @@ module.exports = {
                 filename:'index.html',
                 template:path.join(__dirname, 'src/index.html')
               }),
-          new ExtractTextPlugin('style.css'),
-         // new UglifyJSPlugin()    
+          new ExtractTextPlugin('style.css')
      ],
 
      module:{

@@ -88,7 +88,9 @@ __webpack_require__(3);
 
 __webpack_require__(0);
 
-var _location = __webpack_require__(4);
+__webpack_require__(4);
+
+var _location = __webpack_require__(5);
 
 var _location2 = _interopRequireDefault(_location);
 
@@ -118,6 +120,24 @@ module.exports = __webpack_require__.p + "img/favicon.ico";
 
 /***/ }),
 /* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+if ('serviceWorker' in navigator) {
+
+    window.addEventListener('load', function () {
+        navigator.serviceWorker.register('./sw.js').then(function (reg) {
+            console.log('Registrado o ServiceWork', reg);
+        }).catch(function (error) {
+            return console.log('Erro ao registrar ' + error);
+        });
+    });
+}
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

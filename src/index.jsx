@@ -1,6 +1,6 @@
 import './img/favicon.ico';
 import './sass/main.scss';
-
+import './js/main'
 import viewLocation from './class/location';
 
 var helloWorld = function() {
